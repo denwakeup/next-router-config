@@ -6,10 +6,10 @@
 
 ```bash
 // yarn
-yarn add next-custom-routes
+yarn add next-router-config
 
 // npm
-npm i --save next-custom-routes
+npm i --save next-router-config
 ```
 
 ## Base example
@@ -49,7 +49,7 @@ RouteConfig params:
 
 ```ts
 // src/routes/index.ts
-import { createRoutes } from 'next-custom-routes';
+import { createRoutes } from 'next-router-config';
 import { routesConfig } from './config.ts';
 
 export const { routes, useRouteLink } = createRoutes({
@@ -65,7 +65,7 @@ import { createServer } from 'http';
 import { parse } from 'url';
 
 import next from 'next';
-import { createServerHandler } from 'next-custom-routes';
+import { createServerHandler } from 'next-router-config';
 
 import { routes } from 'src/routes';
 
