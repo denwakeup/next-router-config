@@ -1,4 +1,8 @@
-# Next custom routes
+# Next router config
+
+---
+
+[![npm](https://img.shields.io/npm/v/next-router-config)](https://www.npmjs.com/package/next-router-config)
 
 [Path-to-regexp](https://www.npmjs.com/package/path-to-regexp) based custom routers for a [Next.js](https://github.com/vercel/next.js) apps.
 
