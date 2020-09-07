@@ -54,7 +54,7 @@ RouteConfig params:
 import { createRoutes } from 'next-router-config';
 import { routesConfig } from './config.ts';
 
-export const { routes, useRouteLink } = createRoutes({
+export const { routes, useCustomRouteLink } = createRoutes({
     config: routesConfig,
 });
 ```
@@ -67,14 +67,14 @@ import { createServer } from 'http';
 import { parse } from 'url';
 
 import next from 'next';
-import { createServerHandler } from 'next-router-config';
+import { createServerRequestHandler } from 'next-router-config';
 
 import { routes } from 'src/routes';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 
-const serverRequestHandler = createServerHandler({
+const serverRequestHandler = createServerRequestHandler({
     app,
     routes,
 });
@@ -93,7 +93,7 @@ app.prepare().then(() => {
 import React, { useMemo } from 'react';
 import Link from 'next/link';
 
-import { RoutesNames, useRouteLink, useCustomRouter } from 'src/routes';
+import { RoutesNames, useCustomRouteLink, useCustomRouter } from 'src/routes';
 
 const EntityPageMenuItem = ({ entityId }) => {
     const routeParams = useMemo(
@@ -103,7 +103,7 @@ const EntityPageMenuItem = ({ entityId }) => {
         [entityId]
     );
 
-    const { as, url } = useRouteLink({
+    const { as, url } = useCustomRouteLink({
         routeParams,
         routeName: RoutesNames.Entity,
     });
