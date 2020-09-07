@@ -1,6 +1,6 @@
 {
     "name": "next-router-config",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "path-to-regexp based custom next routes",
     "main": "dist/index.js",
     "sideEffects": false,

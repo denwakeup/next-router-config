@@ -22,12 +22,14 @@ npm i --save next-router-config
 
 ```ts
 // src/routes/config.ts
+import { RoutesConfig } from 'next-router-config';
+
 export enum RoutesNames {
     Home = 'home',
     Entity = 'entity',
 }
 
-export const routesConfig = [
+export const routesConfig: RoutesConfig = [
     {
         name: RoutesNames.Home,
         page: '/home',
@@ -52,9 +54,9 @@ RouteConfig params:
 ```ts
 // src/routes/index.ts
 import { createRoutes } from 'next-router-config';
-import { routesConfig } from './config.ts';
+import { routesConfig } from './config';
 
-export const { routes, useCustomRouteLink } = createRoutes({
+export const { routes, useCustomRouteLink, useCustomRouter } = createRoutes({
     config: routesConfig,
 });
 ```
@@ -103,14 +105,18 @@ const EntityPageMenuItem = ({ entityId }) => {
         [entityId]
     );
 
-    const { as, url } = useCustomRouteLink({
+    const link = useCustomRouteLink({
         routeParams,
         routeName: RoutesNames.Entity,
     });
 
+    if (!link) {
+        return null;
+    }
+
     return (
-        <Link href={url} as={as}>
-            <a href={as}>Entity {entityId}</a>
+        <Link href={link.url} as={link.as}>
+            <a href={link.as}>Entity {entityId}</a>
         </Link>
     );
 };
