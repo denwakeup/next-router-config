@@ -1,6 +1,6 @@
 {
     "name": "next-router-config",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "path-to-regexp based custom next routes",
     "main": "dist/index.js",
     "sideEffects": false,
@@ -12,6 +12,15 @@
         "type": "git",
         "url": "https://github.com/denwakeup/next-router-config.git"
     },
+    "keywords": [
+        "next",
+        "next.js",
+        "react",
+        "route",
+        "router",
+        "routes",
+        "routing"
+    ],
     "scripts": {
         "build": "yarn clear:build && tsc",
         "clear:build": "rm -rf ./dist",
