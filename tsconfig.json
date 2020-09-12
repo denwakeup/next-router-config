@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES5",
         "allowJs": true,
         "skipLibCheck": true,
         "strict": true,
@@ -9,8 +11,8 @@
         "jsx": "react",
         "outDir": "./dist",
         "declaration": true,
-        "downlevelIteration": true,
-        "target": "ES5"
+        "sourceMap": true,
+        "downlevelIteration": true
     },
     "include": ["src/**/*.ts", "src/**/*.tsx"],
     "exclude": ["node_modules", "src/**/__tests__/*"]

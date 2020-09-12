@@ -27,7 +27,9 @@
         "lint": "eslint --fix ./src/**/*.ts",
         "test": "jest",
         "test:watch": "jest --watch",
-        "test:coverage": "jest --coverage --colors"
+        "test:coverage": "jest --coverage --colors",
+        "preversion": "yarn test",
+        "postversion": "git push && git push --tags"
     },
     "lint-staged": {
         "*.{ts,tsx}": [
